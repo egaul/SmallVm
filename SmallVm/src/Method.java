@@ -1,3 +1,5 @@
+
+
 public class Method {
     public Method(){
        //Empty constructor
@@ -22,11 +24,18 @@ public class Method {
         return new Descriptor(name,value);
     }
 
-    public void OUT(String output){
-        System.out.println(output);
+    public void OUT(String[] output){
+        for(int i = 1; i< output.length; i++){
+            System.out.print(output[i]);
+        }
+        System.out.println();//new line for output readability
     }
 
     public void OUT(Descriptor var){
         System.out.println(var.getValue());
+    }
+
+    public boolean isNumeric(String str) {
+        return str.matches("-?\\d");  //matches both negative and positive integers.
     }
 }
