@@ -25,11 +25,11 @@ public class SmallVm {
         //Open test file 1
         //FileInputStream fileIn = new FileInputStream("IN_OUT_ADD_test.txt");
         //Open test file 2
-        FileInputStream fileIn = new FileInputStream("IN_OUT_SUB_test.txt");
+        //FileInputStream fileIn = new FileInputStream("IN_OUT_SUB_test.txt");
         //Open test file 3
-        //FileInputStream fileIn = new FileInputStream("IN_OUT_ADD_test.txt");
+        FileInputStream fileIn = new FileInputStream("IN_OUT_DIV_test.txt");
         //Open test file 4
-        //FileInputStream fileIn = new FileInputStream("IN_OUT_ADD_test.txt");
+        //FileInputStream fileIn = new FileInputStream("IN_OUT_MUL_test.txt");
 
         BufferedReader br = new BufferedReader(new InputStreamReader(fileIn));
 
@@ -80,7 +80,6 @@ public class SmallVm {
                     }
                 }
 
-                //
                 else if (cmd.equals("IN")) {
 
                     String name = inputs[1];
