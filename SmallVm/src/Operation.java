@@ -24,7 +24,7 @@ public class Operation {
         }
         return varIndex;
     }
-    public boolean isNumeric(String str) {
-        return str.matches("-?\\d");  //matches both negative and positive integers.
+    public static boolean isNumeric(String str) {
+        return str.matches("-?\\d+");  //match a number with optional '-' and decimal.
     }
 }

@@ -1,11 +1,9 @@
-; Find the average of two input values
+; Find the difference of two input values
 ;
 ; Input the values
 OUT "Enter the first number:"
 IN number1
-OUT "Enter the second number:"
-IN number2
-ADD diff number1 number2
+SUB diff number1 20
 OUT "The diference is:"
 OUT diff
 HALT

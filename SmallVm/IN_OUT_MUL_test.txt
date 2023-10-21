@@ -1,11 +1,11 @@
-; Find the average of two input values
+; Find the product of two input values
 ;
 ; Input the values
 OUT "Enter the first number:"
 IN number1
 OUT "Enter the second number:"
 IN number2
-ADD prod number1 number2
+MUL prod number1 number2
 OUT "The product is:"
 OUT prod
 HALT

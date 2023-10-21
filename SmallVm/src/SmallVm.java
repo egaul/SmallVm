@@ -80,6 +80,7 @@ public class SmallVm {
                     }
                 }
 
+                //
                 else if (cmd.equals("IN")) {
 
                     String name = inputs[1];
@@ -164,6 +165,7 @@ public class SmallVm {
                         num1 = descriptors.get(varIndex).getValue();
 
                     }
+
                     //Checks if string contains literal int
                     if (opExe.isNumeric(strIn2)){
 
@@ -178,7 +180,6 @@ public class SmallVm {
                         num2 = descriptors.get(varIndex).getValue();
 
                     }
-
                     //calculates difference value
                     int value = num1 - num2;
 
@@ -227,7 +228,7 @@ public class SmallVm {
 
                     }
 
-                    //calculates difference value
+                    //calculates quotient value
                     int value = num1 / num2;
 
                     //Adds new variable descriptor
@@ -289,5 +290,8 @@ public class SmallVm {
                 }
             }
         }
+//        for (Descriptor d: descriptors) {
+//            System.out.println("name: "+d.getName()+", value: "+d.getValue());
+//        }
     }
 }
