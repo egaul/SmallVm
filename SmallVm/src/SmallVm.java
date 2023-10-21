@@ -3,7 +3,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Main {
+public class SmallVm {
     public static void main(String[] args) throws Exception {
 
         final int MAX_MEMORY_SIZE = 1000;
