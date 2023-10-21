@@ -1,10 +1,9 @@
+import java.util.ArrayList;
+
 public class Descriptor {
 
     private int value;
     private String name;
-
-    public Descriptor(){
-    }
 
     public Descriptor(String name, int value){
         this.name = name;
