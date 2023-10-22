@@ -1,3 +1,5 @@
+Eliana Gaul, CSCI 4200, Fall 2023
+****************************************
 ; Find the average of two input values
 ;
 ; Input the values
@@ -19,4 +21,15 @@ OUT average
 ;
 OUT "H A V E A N I C E D A Y !"
 HALT
-
+****************************************
+Enter the first number:
+40
+Enter the second number:
+20
+The average of
+40
+and
+20
+is
+30
+H A V E A N I C E D A Y !
