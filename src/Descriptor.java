@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Descriptor {
-
     private int value;
     private String name;
 
