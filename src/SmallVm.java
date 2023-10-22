@@ -1,6 +1,7 @@
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static java.lang.String.valueOf;
@@ -41,30 +42,43 @@ public class SmallVm {
             for (String instruct : instructions) {
                 //Iterates through each instruction line in the instructions list
 
+                //Trims instruction
+                String lineInput = instruct.trim();
+
+                //Skips instruction if they start with ";" comments
+                if(lineInput.startsWith(";")){
+                    continue;
+                }
+
                 //Splits instruction into String array of 2 strings for easier interpretation
-                String[] args = instruct.split(" ", 2);
+                String[] cleanInput = lineInput.split(" ", 2);
+
+                System.out.println("args: "+ Arrays.toString(cleanInput));
 
                 //The first element holds the operation to execute
-                String cmd = args[0];
+                String cmd = cleanInput[0];
+                String args = null;
 
-                //Does not work, why?
-                //String arg = args[1];
+                //Checks if
+                if (cleanInput.length > 1) {
+                    args = cleanInput[1];
+                }
 
                 //If statements to decode then execute
                 if (cmd.equals("OUT")) {
-                    this.cmdOut(args[1]);
+                    this.cmdOut(args);
                 } else if (cmd.equals("IN")) {
-                    this.cmdIn(args[1]);
+                    this.cmdIn(args);
                 } else if (cmd.equals("ADD")) {
-                    this.cmdAdd(args[1]);
+                    this.cmdAdd(args);
                 } else if (cmd.equals("SUB")) {
-                    this.cmdSub(args[1]);
+                    this.cmdSub(args);
                 } else if (cmd.equals("DIV")) {
-                    this.cmdDiv(args[1]);
+                    this.cmdDiv(args);
                 } else if (cmd.equals("MUL")) {
-                    this.cmdMul(args[1]);
+                    this.cmdMul(args);
                 } else if (cmd.equals("STO")) {
-                    this.cmdSto(args[1]);
+                    this.cmdSto(args);
                 } else if (cmd.equals("HALT")) {
                     this.pushOutput();
                     this.goProg = false;
@@ -225,24 +239,25 @@ public class SmallVm {
 
         String line;
         String author = "Eliana Gaul, CSCI 4200, Fall 2023";
-        instructions.add(author);
-        instructions.add("****************************************");
+
         //Read File Line By Line
         while ((line = br.readLine()) != null) {
             // Stores instructions in arraylist
-            instructions.add(line);
+            this.instructions.add(line);
         }
         //Close the input stream
         fileIn.close();
 
         //Prepping initial output
-        output.addAll(instructions);
+        this.output.add(author);
+        this.output.add("****************************************");
+        this.output.addAll(instructions);
     }
 
     private void pushOutput() throws Exception{
         //Creates and writes into an output txt file
         PrintWriter writer = new PrintWriter("mySmallVm_Output.txt", StandardCharsets.UTF_8);
-        for (String line: output) {
+        for (String line: this.output) {
             writer.println(line);
             if (line.equals("HALT")){
                 writer.print("****************************************");

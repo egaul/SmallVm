@@ -23,13 +23,13 @@ OUT "H A V E A N I C E D A Y !"
 HALT
 ****************************************
 Enter the first number:
-8
+5
 Enter the second number:
-4
+3
 The average of
-8
+5
 and
-4
+3
 is
-6
+4
 H A V E A N I C E D A Y !
